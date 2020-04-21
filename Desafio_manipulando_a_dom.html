@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Desafio</title>
+</head>
+<body class="container">
+    <!------------------- Question 01 --------------------
+    <div id="app">
+        <button onclick="press()" type="button" name="press">Press</button>
+    </div>
+
+    <script>
+        //resolvi essa questão criando a estilização da class box no arquivo style.css
+        function press() {
+            var divElement = document.createElement('div');
+            divElement.setAttribute('class', 'box');
+            
+
+            var containerElement = document.querySelector('div#app');
+            containerElement.appendChild(divElement);
+        }
+    </script>
+-->
+
+<!---------------- Question 02 ------------------------
+<div id="app">
+    <button class="btn" type="button">Press</button>
+</div>
+
+<script>
+    var btnElement = document.querySelector('button.btn');
+    let count = 1;//conta sempre que uma nova div é criada
+
+        btnElement.onclick = function() {
+            // Cria um novo elemento box
+            let divElement = document.createElement("div");
+            divElement.className = "box";
+            divElement.id = "box-" + count;
+            divElement.style.width = '100px';
+            divElement.style.height = '100px';
+            divElement.style.backgroundColor = '#f00';
+
+            divElement.addEventListener("mouseover", () => {
+                let newColor = getRandomColor();
+
+                console.log(divElement.id + ": " + newColor);
+                divElement.style.backgroundColor = newColor;
+            });
+    
+            // Adiciona um novo elemento box para app
+            document.getElementById('app').appendChild(divElement);
+            count++;
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }   
+</script>
+-->
+
+<!-------------------------- Question 03/04 -------------------->
+<div id="app">
+    <input id="name" type="text"/>
+    <button onClick="add()">Add</button>
+    <ul>
+        
+    </ul>
+</div>
+
+<script>
+    var names = ["Diego", "Marcus", "Fabio"];
+
+    var addName = document.querySelector('ul');//envia toda a lista para o html
+    var inputNewName = document.getElementById('name');
+
+    for(name of names){ //percorre meu array de nomes  
+        addItem(name);
+    }
+
+    function addItem(name){
+        var liElement = document.createElement('li');//cria uma tag li
+        var textLi = document.createTextNode(name);//cria o texto a ser enviado pra li
+
+        liElement.appendChild(textLi);//envia o texto para li
+
+        addName.appendChild(liElement);//envia a li para dentro do ul
+    }
+
+
+    function add(){
+        addItem(inputNewName.value);
+
+        inputNewName.value = "";
+    }
+</script>
+</body>
+</html>

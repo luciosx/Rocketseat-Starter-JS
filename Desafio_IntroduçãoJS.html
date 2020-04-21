@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Introdução JS Desafio</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="container">
+ 
+    <script>
+        /******** Question 01 ************** 
+        var address = {
+            street: "Rua dos pinheiros",
+            number: 123,
+            center: "centro",
+            city: "São Paulo",
+            uf: "SP"
+        };
+
+        console.log(`O usuário mora em ${address.city} / ${address.uf}
+            , no bairro ${address.center}, na rua ${address.street},
+             nº ${address.number}`);
+        */
+
+        /********** Question 02 **********
+        function pares(x , y) {
+            for(var i = x; i < y; i++){
+                if(i % 2 === 0){
+                    console.log(i);
+                }
+            }
+        }   
+
+        pares(93, 2372);
+        */     
+
+        /*********** Question 03 ************
+        function haveSkills(skills) {
+            if(skills.indexOf("Javascript") != -1){
+                console.log("true");
+            } else {
+                console.log("false");
+            }
+        }
+        var skills = ["NodeJS", "ReactJS", "Javascript"];
+        haveSkills(skills);
+        */
+
+        /*************** Question 04 *******************
+        function experience(years) {
+            if(years === 1 ){
+                console.log("Beginner");
+            } else if (years > 1 && years <= 3){
+                console.log("Intermediary");
+            } else if (years > 3 && years <= 6){
+                console.log("Advanced");
+            } else {
+                console.log("Jedi Master");
+            }
+        }
+
+        var years = 7;
+        experience(years);
+        */
+
+        
+    </script>
+</body>
+</html>
